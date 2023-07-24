@@ -38,6 +38,10 @@ const routes = [
         component: () => import('../views/product-manage/productAdd.vue')
     },
     {
+        path: '/productManage/edit',
+        component: () => import('../views/product-manage/productEdit.vue')
+    },
+    {
         path: '/productManage/list',
         component: () => import('../views/product-manage/productList.vue')
     },

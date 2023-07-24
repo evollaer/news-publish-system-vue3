@@ -38,6 +38,7 @@ import { useRouter } from 'vue-router'
 import { ref, reactive } from "vue";
 import upload from "../../util/upload";
 import { UserFilled } from '@element-plus/icons-vue'
+import { ElMessage } from "element-plus";
 const router = useRouter()
 const userFormRef = ref();
 const userForm = reactive({
@@ -87,6 +88,7 @@ const submitForm = () => {
       //提交数据到后端
       // console.log(userForm)
       await upload('/adminapi/user/add', userForm)
+      ElMessage.success("添加成功")
       router.push(`/userManage/list`)// 路由跳转到用户列表
     }
   })

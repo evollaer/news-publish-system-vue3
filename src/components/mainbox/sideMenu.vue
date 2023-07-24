@@ -50,6 +50,7 @@
                     <span>产品管理</span>
                 </template>
                 <el-menu-item index="/productManage/add">添加产品</el-menu-item>
+                <el-menu-item index="/productManage/edit">编辑产品</el-menu-item>
                 <el-menu-item index="/productManage/list">产品列表</el-menu-item>
             </el-sub-menu>
         </el-menu>
