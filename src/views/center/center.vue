@@ -31,7 +31,7 @@
             </el-form-item>
 
             <el-form-item label="头像" prop="avatar">
-              <Upload :avatar="userForm.avatar" @evollaerChange="handleChange" />
+              <Upload :avatar="userForm.avatar" @fileChange="handleChange" />
             </el-form-item>
 
             <el-form-item>

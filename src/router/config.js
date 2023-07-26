@@ -30,6 +30,10 @@ const routes = [
         component: () => import('../views/news-manage/newsAdd.vue')
     },
     {
+        path: '/newsManage/edit/:id',
+        component: () => import('../views/news-manage/newsEdit.vue')
+    },
+    {
         path: '/newsManage/list',
         component: () => import('../views/news-manage/newsList.vue')
     },

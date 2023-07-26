@@ -39,11 +39,14 @@ router.beforeEach((to, from, next) => {
     } else {
       console.log('获取到token了');
       if (!store.state.isGetterRouter) {//判断是否为第一次
+        
+        router.removeRoute('mainbox')// 重新配置mainbox
         ConfigRouter()
         next({
           path: to.fullPath
         })
       } else {
+        console.log(router);
         next()
       }
     }
@@ -51,6 +54,15 @@ router.beforeEach((to, from, next) => {
 })
 
 const ConfigRouter = () => {
+
+  // 判断当前主路由中是否存在mainbox
+  if(!router.hasRoute("mainbox")){
+    router.addRoute(  {
+      path: "/mainbox",
+      name: "mainbox",
+      component:  () => import('../views/mainbox.vue')
+    })
+  }
   RoutesConfig.forEach(item => {
     router.addRoute('mainbox', item)
   })

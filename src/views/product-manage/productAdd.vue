@@ -47,7 +47,7 @@
           >
               <Upload
                   :avatar="productForm.cover"
-                  @evollaerChange="handleChange"
+                  @fileChange="handleChange"
               />
           </el-form-item>
 

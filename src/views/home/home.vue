@@ -43,7 +43,7 @@
 import axios from 'axios';
 import { computed, onMounted, ref } from "vue";
 import { useStore } from 'vuex'
-const loopList = ref([{}]); // 将图片数据变成响应式
+const loopList = ref([]); // 将图片数据变成响应式
 const store = useStore()
 
 
@@ -59,11 +59,16 @@ const avatarUrl = computed(() =>
 const welcomeText = computed(() =>
   new Date().getHours() < 12 ? "要开心每一天." : "喝杯咖啡提提神吧."
 );
-// axios.get("/adminapi/user/home").then(res => {
-//   console.log(res.data);
-// }).catch(_ => {
-//   console.log(_);
-// })
+
+onMounted(()=>{
+  getTableData()
+})
+// 获取用户列表数据
+const getTableData = async () => {
+  const res = await axios.get("/adminapi/product/list");
+  console.log(res.data)
+  loopList.value = res.data.data;
+};
 
 </script>
 <style lang="scss" scoped>

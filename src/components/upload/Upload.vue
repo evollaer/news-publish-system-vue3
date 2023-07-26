@@ -16,7 +16,7 @@ const props = defineProps({
   avatar: String
 })
 
-const emit = defineEmits(["evollaerChange"])
+const emit = defineEmits(["fileChange"])
 
 const uploadAvatar = computed(
   () =>
@@ -28,7 +28,7 @@ const uploadAvatar = computed(
 const handleChange = file => {
   console.log(file);
   console.log(file.raw);
-  emit("evollaerChange", file.raw)
+  emit("fileChange", file.raw)
 };
 </script>
 
