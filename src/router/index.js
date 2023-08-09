@@ -32,10 +32,12 @@ router.beforeEach((to, from, next) => {
     next()
   } else {
     if (!localStorage.getItem('token')) {
-      ElMessage.error('登录信息失效，请重新登录')
-      next({
-        path: '/login'
-      })
+      // ElMessage.error('登录信息失效，请重新登录')
+      next()
+      // ElMessage.error('登录信息失效，请重新登录')
+      // next({
+      //   path: '/login'
+      // })
     } else {
       console.log('获取到token了');
       if (!store.state.isGetterRouter) {//判断是否为第一次

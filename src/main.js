@@ -7,7 +7,12 @@ import 'element-plus/dist/index.css'
 import Particles from "particles.vue3";
 import '../src/util/axios.config'
 
-createApp(App)
+const app = createApp(App)
+app.config.globalProperties.$name =  'evollaer'
+app.config.globalProperties.$methodTest =  (val)=>{ return val*val }
+
+
+app
 .use(store)
 .use(router)
 .use(ElementPlus)

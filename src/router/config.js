@@ -49,5 +49,9 @@ const routes = [
         path: '/productManage/list',
         component: () => import('../views/product-manage/productList.vue')
     },
+    {
+        path: '/test/test',
+        component: () =>require('../views/test/test.vue'),
+    },
 ]
 export default routes
